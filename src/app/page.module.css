@@ -1,168 +1,423 @@
-.page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
+.pageContainer {
+    height: 100vh;
+    width: 100vw;
+    background-color: #121212;
 }
 
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
-}
-
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
-}
-
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-.ctas {
-  display: flex;
-  gap: 16px;
-}
-
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
-}
-
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
-}
-
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 180px;
-}
-
-.footer {
-  grid-row-start: 3;
-  display: flex;
-  gap: 24px;
-}
-
-.footer a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.footer img {
-  flex-shrink: 0;
-}
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
-}
-
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
-  }
-
-  .main {
-    align-items: center;
-  }
-
-  .main ol {
-    text-align: center;
-  }
-
-  .ctas {
+#basePage {
+    background-color: #121212;
+    min-height: 100vh;
+    display: flex;
     flex-direction: column;
-  }
+}
 
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
-  }
-
-  a.secondary {
-    min-width: auto;
-  }
-
-  .footer {
-    flex-wrap: wrap;
+#results {
+    padding: 28px 28px;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
+    flex-grow: 1;
+    max-width: 460px;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
+#resultImage {
+    margin-top: 50px;
+    height: 300px;
+    width: 300px;
+}
+
+#spotifyButton {
+    height: 50px;
+    width: 150px;
+    border-radius: 500px;
+    background-color:#1ed760;
+}
+
+#spotifyLink {
+    text-decoration: none;
+    color: black;
+}
+
+#resultMessageDiv {
+    height: 100px;
+}
+
+#resultMessage {
+    margin-bottom: 20px;
+}
+
+#resultBar {
+    display: flex;
+    flex-grow: 1;
+    height: 20px;
+    width: 100%;
+    border: 1px solid rgb(136, 136, 136);
+}
+
+#resultGuess1 {
+    flex-grow: 1;
+    border-right: 1px solid rgb(136, 136, 136);
+}
+
+#resultGuess2 {
+    flex-grow: 1;
+    border-right: 1px solid rgb(136, 136, 136);
+}
+
+#resultGuess3 {
+    flex-grow: 1;
+    border-right: 1px solid rgb(136, 136, 136);
+}
+
+#resultGuess4 {
+    flex-grow: 1;
+    border-right: 1px solid rgb(136, 136, 136);
+}
+
+#resultGuess5 {
+    flex-grow: 1;
+    border-right: 1px solid rgb(136, 136, 136);
+}
+
+#resultGuess6 {
+    flex-grow: 1;
+}
+
+#content {
+    padding: 28px 28px 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    max-width: 1000px;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#progressDiv {
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 2px solid rgb(136, 136, 136);
+    border-bottom: 2px solid rgb(136, 136, 136);
+}
+
+#progressBar {
+    display: flex;
+    height: 20px;
+    width: 100%;
+    max-width: 800px;
+    border-left: 1px solid rgb(136, 136, 136);
+    border-right: 1px solid rgb(136, 136, 136);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+#progressBar > div {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+#progressBar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: green;
+    z-index: 3;
+}
+
+#progressBar.animate::before {
+    animation: fillSegment 16s linear forwards;
+}
+
+#progressBar.paused::before {
+    animation-play-state: paused;
+}
+
+@keyframes fillSegment {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+#play1 {
+    flex-grow: 1;
+    border-right: 1px solid rgb(136, 136, 136);
+}
+
+#play2 {
+    flex-grow: 1;
+    border-right: 1px solid rgb(136, 136, 136);
+}
+
+#play3 {
+    flex-grow: 2;
+    border-right: 1px solid rgb(136, 136, 136);
+}
+
+#play4 {
+    flex-grow: 4;
+    border-right: 1px solid rgb(136, 136, 136);
+}
+
+#play5 {
+    flex-grow: 4;
+    border-right: 1px solid rgb(136, 136, 136);
+}
+
+#play6 {
+    flex-grow: 4;
+}
+
+.playProgressBar {
+    background-position: left;
+}
+
+#searchDiv {
+    padding-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    max-width: 800px;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#playButtonRow {
+    padding-bottom: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    max-width: 800px;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#currentTimePlayingDiv {
+    display: flex;
+    justify-content: start;
+}
+
+#playButtonDiv {
+    display: flex;
+    justify-content: center;
+}
+
+#totalTimeDiv {
+    display: flex;
+    justify-content: end;
+}
+
+#playButton {
+    width: 50px;
+    border-radius: 50%;
+    height: 50px;
+    background-color: #fff;
+    color: #000;
+}
+
+#playButton:hover {
+    transform: scale(1.06);
+}
+
+#pauseButton {
+    width: 50px;
+    border-radius: 50%;
+    height: 50px;
+    background-color: #fff;
+    color: #000;
+}
+
+#pauseButton:hover {
+    transform: scale(1.06);
+}
+
+#searchBarRow {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    max-width: 800px;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#searchInput {
+    position: relative;
+    width: 800px;
+    height: 7vh;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 25px;
+    z-index: 1;
+}
+
+#submissionRow {
+    padding-top: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    max-width: 800px;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#skipDiv {
+    display: flex;
+    justify-content: start;
+}
+
+#skipButton {
+    height: 50px;
+    width: 125px;
+    background-color: rgb(100, 100, 100);
+    color: #fff;
+    border-radius: 10px;
+}
+
+#resetDiv {
+    display: flex;
+    justify-content: center;
+}
+
+#resetButton {
+    height: 50px;
+    width: 125px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-radius: 10px;
+}
+
+#submitButtonDiv {
+    display: flex;
+    justify-content: end;
+}
+
+#submitButton {
+    height: 50px;
+    width: 125px;
+    background-color: rgba(0, 248, 33, 0.575);
+    color: #fff;
+    border-radius: 10px;
+}
+
+#playAgainDiv {
+    height: 100px;
+}
+
+#playAgainButton {
+    height: 50px;
+    width: 125px;
+    background-color: rgba(0, 248, 33, 0.575);
+    color: #fff;
+    border-radius: 10px;
+}
+
+.row {
+    width: 33%;
+}
+
+.skipped {
+    width: 25px;
+    height: 25px;
+    border: 1px solid rgb(136, 136, 136);
+    margin-left: 10px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.skippedText {
+    color: rgb(100, 100, 100);
+}
+
+.spacedText {
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+}
+
+.wrong {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    margin-right: 15px;
+}
+
+.partiallyCorrect {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    margin-right: 15px;
+}
+
+.correct {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    margin-right: 15px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    overflow-y: scroll;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    max-height: 300px;
+    width: 800px;
+    bottom: 67px;
+}
+
+#myUL {
+    padding: 0px;
+    margin: 5px 0px;
+    list-style-type: none;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #cecece
 }
