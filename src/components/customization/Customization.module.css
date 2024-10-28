@@ -1,0 +1,27 @@
+.customizationContainer {
+    padding: 28px 28px 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.titleContainer {
+    padding-top: 15vh;
+}
+
+.optionContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.customOption {
+    padding: 0 30px 0 30px;
+}

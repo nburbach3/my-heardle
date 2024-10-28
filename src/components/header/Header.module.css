@@ -76,7 +76,6 @@
 }
 
 .modal {
-    background-color: #212121;
     padding: 30px 50px;
     width: 500px;
     max-width: 100%;
@@ -111,7 +110,6 @@
     width: 25px;
     align-items: center;
     display: flex;
-    background-color: #121212;
     border: #121212;
 }
 
@@ -183,7 +181,6 @@
 }
 
 .headerButton {
-    background-color: #121212;
     border: #121212;
     outline: none;
 }
@@ -194,7 +191,6 @@
     display: flex;
     justify-content: center;
     border-bottom: 1px solid rgb(136, 136, 136);
-    background-color: #121212;
 }
 
 .headerContents {

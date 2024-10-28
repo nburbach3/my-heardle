@@ -15,8 +15,24 @@ button:disabled {
   box-sizing: border-box;
 }
 
-.foreground {
-  color: #fff;
+.themedColor {
+  color: var(--theme-color);
+}
+
+.themedBackgroundColor {
+  background-color: var(--theme-backgroundColor);
+}
+
+.modalBackgroundColor {
+  background-color: var(--theme-modalBackgroundColor);
+}
+
+.modalButtonColor {
+  color: var(--theme-modalButtonColor);
+}
+
+.modalButtonBackgroundColor {
+  background-color: var(--theme-modalButtonBackgroundColor);
 }
 
 .show {

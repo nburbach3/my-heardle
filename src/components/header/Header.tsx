@@ -62,11 +62,13 @@ const Header = () => {
           showInformationModalContainer ? styles.showModal : ""
         }`}
       >
-        <div className={styles.modal}>
+        <div
+          className={`${styles.modal} themedColor themedBackgroundColor modalBackgroundColor`}
+        >
           <div className={styles.modalTitle}>
             <h3 className={`${styles.modalTitleText} foreground`}>About</h3>
             <button
-              className={styles.modalCloseButton}
+              className={`${styles.modalCloseButton} modalButtonBackgroundColor modalButtonColor`}
               onClick={() => setShowInformationModalContainer(false)}
             >
               <svg
@@ -101,11 +103,14 @@ const Header = () => {
           showSupportModalContainer ? styles.showModal : ""
         }`}
       >
-        <div className={styles.modal}>
+        <div
+          className={`${styles.modal} themedColor themedBackgroundColor modalBackgroundColor`}
+        >
+          {" "}
           <div className={styles.modalTitle}>
             <h3 className={`${styles.modalTitleText} foreground`}>Support</h3>
             <button
-              className={styles.modalCloseButton}
+              className={`${styles.modalCloseButton} modalButtonBackgroundColor modalButtonColor`}
               onClick={() => setShowSupportModalContainer(false)}
             >
               <svg
@@ -148,11 +153,14 @@ const Header = () => {
           showStatsModalContainer ? styles.showModal : ""
         }`}
       >
-        <div className={styles.modal}>
+        <div
+          className={`${styles.modal} themedColor themedBackgroundColor modalBackgroundColor`}
+        >
+          {" "}
           <div className={styles.modalTitle}>
             <h3 className={`${styles.modalTitleText} foreground`}>Stats</h3>
             <button
-              className={styles.modalCloseButton}
+              className={`${styles.modalCloseButton} modalButtonBackgroundColor modalButtonColor`}
               onClick={() => setShowStatsModalContainer(false)}
             >
               <svg
@@ -196,13 +204,16 @@ const Header = () => {
           showHowToPlayModalContainer ? styles.showModal : ""
         }`}
       >
-        <div className={styles.modal}>
+        <div
+          className={`${styles.modal} themedColor themedBackgroundColor modalBackgroundColor`}
+        >
+          {" "}
           <div className={styles.modalTitle}>
             <h3 className={`${styles.modalTitleText} foreground`}>
               How To Play
             </h3>
             <button
-              className={styles.modalCloseButton}
+              className={`${styles.modalCloseButton} modalButtonBackgroundColor modalButtonColor`}
               onClick={() => setShowHowToPlayModalContainer(false)}
             >
               <svg
@@ -268,7 +279,7 @@ const Header = () => {
       </div>
       <div className={styles.headerContents}>
         <button
-          className={styles.headerButton}
+          className={`${styles.headerButton} themedColor themedBackgroundColor`}
           onClick={() => setShowInformationModalContainer(true)}
         >
           <svg
@@ -289,7 +300,7 @@ const Header = () => {
           </svg>
         </button>
         <button
-          className={styles.headerButton}
+          className={`${styles.headerButton} themedColor themedBackgroundColor`}
           onClick={() => setShowSupportModalContainer(true)}
         >
           <svg
@@ -309,7 +320,7 @@ const Header = () => {
         </button>
         <h1 className={`foreground ${styles.headerTitle}`}>My Heardle</h1>
         <button
-          className={styles.headerButton}
+          className={`${styles.headerButton} themedColor themedBackgroundColor`}
           onClick={() => setShowStatsModalContainer(true)}
         >
           <svg
@@ -328,7 +339,7 @@ const Header = () => {
           </svg>
         </button>
         <button
-          className={styles.headerButton}
+          className={`${styles.headerButton} themedColor themedBackgroundColor`}
           onClick={() => setShowHowToPlayModalContainer(true)}
         >
           <svg
